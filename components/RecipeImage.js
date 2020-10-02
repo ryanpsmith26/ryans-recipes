@@ -4,7 +4,7 @@ import { StyleSheet, View, Image } from 'react-native';
 const FeaturedImage = () => {
 	return (
 		<View style={styles.image}>
-			<Image source={require('../img/brisket-avocado.jpeg')} style={styles.img} />
+			<Image source={require('../assets/img/brisket-avocado.jpeg')} style={styles.img} />
 		</View>
 	);
 };

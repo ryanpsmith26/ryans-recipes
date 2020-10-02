@@ -1,13 +1,18 @@
 import React from 'react';
-import { StyleSheet, SafeAreaView, View, ImageBackground, Text, Image } from 'react-native';
+import { StyleSheet, SafeAreaView, Text, Image } from 'react-native';
+import { useFonts } from 'expo-font';
 
 import NavBar from '../components/NavBar';
 
 const WelcomeScreen = ({ navigation }) => {
+	useFonts({
+		'covered-by-your-grace': require('../assets/fonts/CoveredByYourGrace-Regular.ttf')
+	});
+
 	return (
 		<SafeAreaView style={styles.welcomeView}>
 			<Text style={styles.welcomeHeading}>Ryan's Recipes!</Text>
-			<Image source={require('../img/frost-kitchen-1.jpeg')} style={styles.welcomeImg} />
+			<Image source={require('../assets/img/frost-kitchen-1.jpeg')} style={styles.welcomeImg} />
 			<NavBar style={styles.navbar} nav={navigation} />
 		</SafeAreaView>
 	);
@@ -23,7 +28,9 @@ const styles = StyleSheet.create({
 		textAlign: 'center',
 		color: '#fff',
 		fontSize: 30,
-		marginTop: 30
+		marginTop: 30,
+		fontFamily: 'covered-by-your-grace',
+		letterSpacing: 7
 	},
 	welcomeImg: {
 		height: 600,
