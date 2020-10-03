@@ -4,11 +4,11 @@ import { connect } from 'react-redux';
 
 import RecipeListItem from '../components/RecipeListItem';
 import NavBar from '../components/NavBar';
-import getRecipes from '../redux/store';
+import { getRecipes } from '../redux/store';
 
 const AllRecipesScreen = ({ navigation, getRecipes, recipes }) => {
 	useEffect(() => {
-		// getRecipes();
+		getRecipes();
 	});
 
 	return (

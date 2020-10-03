@@ -10,7 +10,7 @@ export const getRecipes = () => ({
 });
 
 // INITIAL STATE
-const initialState = require('./stockRecipes');
+const initialState = require('./stock-recipes');
 
 // REDUCER
 const reducer = (state = initialState, action) => {
