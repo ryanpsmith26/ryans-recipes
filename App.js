@@ -11,7 +11,7 @@ const Stack = createStackNavigator();
 const StackNavigator = () => (
 	<Stack.Navigator>
 		<Stack.Screen name="Welcome" component={WelcomeScreen} options={headerStyle} />
-		<Stack.Screen name="AllRecipes" component={AllRecipesScreen} options={headerStyle} />
+		<Stack.Screen name="Explore" component={AllRecipesScreen} options={headerStyle} />
 		<Stack.Screen name="Recipe" component={RecipeScreen} options={headerStyle} />
 	</Stack.Navigator>
 );

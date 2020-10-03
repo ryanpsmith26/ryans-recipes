@@ -6,7 +6,7 @@ const NavBar = ({ nav }) => {
 	return (
 		<View style={styles.navBarView}>
 			<Entypo name="home" size={30} color="#fff" onPress={() => nav.navigate('Welcome')} />
-			<Entypo name="bowl" size={30} color="#fff" onPress={() => nav.navigate('AllRecipes')} />
+			<Entypo name="bowl" size={30} color="#fff" onPress={() => nav.navigate('Explore')} />
 			<Entypo name="heart" size={30} color="#fff" onPress={() => nav.navigate('Recipe')} />
 		</View>
 	);
