@@ -14,7 +14,7 @@ const WelcomeScreen = ({ navigation }) => {
 	else {
 		return (
 			<SafeAreaView style={styles.welcomeView}>
-				<Text style={styles.welcomeHeading}>Ryan's Recipes!!!</Text>
+				<Text style={styles.welcomeHeading}>Ryan's Recipes!</Text>
 				<Image source={require('../assets/img/frost-kitchen-1.jpeg')} style={styles.welcomeImg} />
 				<NavBar style={styles.navbar} nav={navigation} />
 			</SafeAreaView>
