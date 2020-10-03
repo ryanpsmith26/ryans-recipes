@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, ScrollView, FlatList, SafeAreaView } from 'react-native';
+import { StyleSheet, FlatList, SafeAreaView } from 'react-native';
 
 import RecipeListItem from '../components/RecipeListItem';
 import NavBar from '../components/NavBar';
@@ -40,13 +40,11 @@ const recipeList = [
 const AllRecipesScreen = ({ navigation }) => {
 	return (
 		<SafeAreaView style={styles.allRecipesView}>
-			<ScrollView>
-				<FlatList
-					data={recipeList}
-					keyExtractor={(recipe) => recipe.id.toString()}
-					renderItem={({ item }) => <RecipeListItem name={item.name} image={item.image} />}
-				/>
-			</ScrollView>
+			<FlatList
+				data={recipeList}
+				keyExtractor={(recipe) => recipe.id.toString()}
+				renderItem={({ item }) => <RecipeListItem name={item.name} image={item.image} />}
+			/>
 			<NavBar nav={navigation} />
 		</SafeAreaView>
 	);
