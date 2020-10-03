@@ -5,7 +5,8 @@ const NavBar = ({ nav }) => {
 	return (
 		<View style={styles.navBarView}>
 			<Button title="Home" color="white" onPress={() => nav.navigate('Welcome')} style={styles.NavBtn} />
-			<Button title="Recipes" color="white" onPress={() => nav.navigate('Recipe')} style={styles.NavBtn} />
+			<Button title="Explore" color="white" onPress={() => nav.navigate('AllRecipes')} style={styles.NavBtn} />
+			<Button title="Recipe" color="white" onPress={() => nav.navigate('Recipe')} style={styles.NavBtn} />
 		</View>
 	);
 };
