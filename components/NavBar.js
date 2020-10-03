@@ -12,8 +12,8 @@ const NavBar = ({ nav }) => {
 
 const styles = StyleSheet.create({
 	navBarView: {
-		borderTopWidth: 1,
-		borderTopColor: '#404040',
+		borderTopWidth: 0.25,
+		borderTopColor: '#fff',
 		flex: -1,
 		flexDirection: 'row',
 		justifyContent: 'space-around',

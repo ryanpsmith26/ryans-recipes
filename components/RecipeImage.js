@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
 		height: 400,
 		width: '100%',
 		resizeMode: 'cover',
-		opacity: 0.8
+		opacity: 0.75
 	}
 });
 

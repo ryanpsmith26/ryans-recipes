@@ -9,8 +9,20 @@ const Stack = createStackNavigator();
 
 const StackNavigator = () => (
 	<Stack.Navigator>
-		<Stack.Screen name="Welcome" component={WelcomeScreen} />
-		<Stack.Screen name="Recipe" component={RecipeScreen} />
+		<Stack.Screen
+			name="Welcome"
+			component={WelcomeScreen}
+			options={{
+				headerStyle: { backgroundColor: 'dodgerblue' }
+			}}
+		/>
+		<Stack.Screen
+			name="Recipe"
+			component={RecipeScreen}
+			options={{
+				headerStyle: { backgroundColor: 'dodgerblue' }
+			}}
+		/>
 	</Stack.Navigator>
 );
 
