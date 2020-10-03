@@ -1,10 +1,39 @@
 import React from 'react';
-import { StyleSheet, SafeAreaView, ScrollView, View, Text } from 'react-native';
+import { StyleSheet, SafeAreaView, ScrollView, View, Text, Image } from 'react-native';
 import { AppLoading } from 'expo';
 import { CoveredByYourGrace_400Regular, useFonts } from '@expo-google-fonts/covered-by-your-grace';
+import { connect } from 'react-redux';
 
-import RecipeImage from '../components/RecipeImage';
 import NavBar from '../components/NavBar';
+
+const recipeInfo = {
+	name: 'Braised Short Ribs over Rice!',
+	ingredients: [
+		'Short ribs',
+		'White Rice',
+		'Chipotles in abodo',
+		'Onion',
+		'Garlic',
+		'Avocado',
+		'Avocado oil (or any high heat oil)',
+		'Cumin',
+		'Cayenne',
+		'S/P'
+	],
+	directions: [
+		'Preheat oven to 300F',
+		'Add some avocado oil to a dutch oven and get it ripping hot',
+		'Place in your short ribs and brown on all sides',
+		'Remove the beef and set aside',
+		'Add your onion and garlic to the pot',
+		'Saute until soft, picking up the fond at the bottom of the pot; add some liquid as needed to do so',
+		'Pour in your broth, cover and bring to a simmer',
+		'Place your beef into the bath and put the pot covered into the preheated oven',
+		'Check on it every hour and remove from oven when the beef easily falls apart',
+		'Shred the beef with two forks, remove the bones and enjoy!'
+	],
+	image: require('../assets/img/brisket-avocado.jpeg')
+};
 
 const RecipeScreen = ({ navigation }) => {
 	let [ fontsLoaded ] = useFonts({
@@ -16,40 +45,29 @@ const RecipeScreen = ({ navigation }) => {
 		return (
 			<SafeAreaView style={styles.recipeView}>
 				<ScrollView>
-					<RecipeImage />
+					{/* Recipe Image: */}
+					<Image source={recipeInfo.image} style={styles.img} />
 					<View style={styles.recipeContent}>
-						<Text style={[ styles.recipesHeadings, styles.recipeTitle ]}>Braised Short Rib over Rice!</Text>
+						{/* Recipe Name: */}
+						<Text style={[ styles.recipesHeadings, styles.recipeTitle ]}>{recipeInfo.name}</Text>
+						{/* Ingredients: */}
 						<View style={styles.recipesContentSection}>
 							<Text style={[ styles.recipesHeadings, styles.recipeSubHeading ]}>Ingredients</Text>
-							<Text> - Short ribs</Text>
-							<Text> - Basmati rice</Text>
-							<Text> - Chipotles in adobo</Text>
-							<Text> - Onion</Text>
-							<Text> - Garlic</Text>
-							<Text> - Avocado oil</Text>
-							<Text> - Cumin</Text>
-							<Text> - Cayenne</Text>
-							<Text> - S/P</Text>
+							{recipeInfo.ingredients.map((ingredient, i) => (
+								<Text key={i} style={styles.singleIngredient}>
+									- {ingredient}
+								</Text>
+							))}
 						</View>
-						<View>
+						{/* Directions: */}
+						<View style={styles.recipesContentSection}>
 							<Text style={[ styles.recipesHeadings, styles.recipeSubHeading ]}>Directions</Text>
-							<Text> - Preheat oven to 300F</Text>
-							<Text> - Add some avocado oil to a dutch oven and get it ripping hot</Text>
-							<Text> - Place in your short ribs and brown on all sides</Text>
-							<Text> - Remove the beef and set aside</Text>
-							<Text> - Add your onion and garlic to the pot</Text>
-							<Text>
-								{' '}
-								- Saute until soft, picking up the fond at the bottom of the pot; add some liquid as
-								needed to do so
-							</Text>
-							<Text> - Pour in your broth, cover and bring to a simmer</Text>
-							<Text>
-								{' '}
-								- Place your beef into the bath and put the pot covered into the preheated oven
-							</Text>
-							<Text> - Check on it every hour and remove from oven when the beef easily falls apart</Text>
-							<Text> - Shred the beef with two forks, remove the bones and enjoy!</Text>
+							{recipeInfo.directions.map((direction, i) => (
+								<View key={i} style={styles.singleDirectionView}>
+									<Text style={styles.singleDirection}>- </Text>
+									<Text style={styles.singleDirection}>{direction}</Text>
+								</View>
+							))}
 						</View>
 					</View>
 				</ScrollView>
@@ -65,6 +83,12 @@ const styles = StyleSheet.create({
 		backgroundColor: 'dodgerblue',
 		justifyContent: 'space-between'
 	},
+	img: {
+		height: 400,
+		width: '100%',
+		resizeMode: 'cover',
+		opacity: 0.75
+	},
 	recipeContent: {
 		margin: 20
 	},
@@ -79,10 +103,23 @@ const styles = StyleSheet.create({
 	},
 	recipesHeadings: {
 		color: '#fff',
-		fontWeight: 'bold'
+		fontWeight: 'bold',
+		fontSize: 20,
+		letterSpacing: 2
 	},
-	recipeSubHeading: {},
-	recipeText: {}
+	singleIngredient: {
+		marginTop: 10,
+		fontSize: 15
+	},
+	singleDirectionView: {
+		flexDirection: 'row',
+		marginTop: 15
+	},
+	singleDirection: {
+		fontSize: 15
+	}
 });
 
-export default RecipeScreen;
+const mapState = (state) => ({});
+
+export default connect(mapState)(RecipeScreen);
