@@ -16,7 +16,6 @@ const StackNavigator = () => (
 		<Stack.Screen name="Welcome" component={WelcomeScreen} options={headerStyle} />
 		<Stack.Screen name="Explore" component={AllRecipesScreen} options={headerStyle} />
 		<Stack.Screen name="New Recipe" component={NewRecipeForm} options={headerStyle} />
-
 		<Stack.Screen name="Recipe" component={RecipeScreen} options={headerStyle} />
 	</Stack.Navigator>
 );

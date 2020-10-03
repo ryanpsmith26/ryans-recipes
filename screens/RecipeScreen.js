@@ -1,44 +1,18 @@
 import React from 'react';
 import { StyleSheet, SafeAreaView, ScrollView, View, Text, Image } from 'react-native';
+import { connect } from 'react-redux';
 import { AppLoading } from 'expo';
 import { CoveredByYourGrace_400Regular, useFonts } from '@expo-google-fonts/covered-by-your-grace';
-import { connect } from 'react-redux';
+import { MaterialIcons } from '@expo/vector-icons';
 
 import NavBar from '../components/NavBar';
 
-const recipeInfo = {
-	name: 'Braised Short Ribs over Rice!',
-	ingredients: [
-		'Short ribs',
-		'White Rice',
-		'Chipotles in abodo',
-		'Onion',
-		'Garlic',
-		'Avocado',
-		'Avocado oil (or any high heat oil)',
-		'Cumin',
-		'Cayenne',
-		'S/P'
-	],
-	directions: [
-		'Preheat oven to 300F',
-		'Add some avocado oil to a dutch oven and get it ripping hot',
-		'Place in your short ribs and brown on all sides',
-		'Remove the beef and set aside',
-		'Add your onion and garlic to the pot',
-		'Saute until soft, picking up the fond at the bottom of the pot; add some liquid as needed to do so',
-		'Pour in your broth, cover and bring to a simmer',
-		'Place your beef into the bath and put the pot covered into the preheated oven',
-		'Check on it every hour and remove from oven when the beef easily falls apart',
-		'Shred the beef with two forks, remove the bones and enjoy!'
-	],
-	image: require('../assets/img/brisket-avocado.jpeg')
-};
-
-const RecipeScreen = ({ navigation }) => {
+const RecipeScreen = ({ navigation, route, recipes }) => {
 	let [ fontsLoaded ] = useFonts({
 		CoveredByYourGrace_400Regular
 	});
+
+	const recipe = recipes.find((recipe) => recipe.id === route.params.id);
 
 	if (!fontsLoaded) return <AppLoading />;
 	else {
@@ -46,14 +20,19 @@ const RecipeScreen = ({ navigation }) => {
 			<SafeAreaView style={styles.recipeView}>
 				<ScrollView>
 					{/* Recipe Image: */}
-					<Image source={recipeInfo.image} style={styles.img} />
+					<Image source={recipe.image} style={styles.img} />
 					<View style={styles.recipeContent}>
 						{/* Recipe Name: */}
-						<Text style={[ styles.recipesHeadings, styles.recipeTitle ]}>{recipeInfo.name}</Text>
+						<Text style={[ styles.recipesHeadings, styles.recipeTitle ]}>{recipe.name}</Text>
+						{/* Time */}
+						<View style={styles.timeView}>
+							<MaterialIcons name="timer" size={18} color="#fff" />
+							<Text style={styles.time}>{recipe.time}</Text>
+						</View>
 						{/* Ingredients: */}
 						<View style={styles.recipesContentSection}>
 							<Text style={[ styles.recipesHeadings, styles.recipeSubHeading ]}>Ingredients</Text>
-							{recipeInfo.ingredients.map((ingredient, i) => (
+							{recipe.ingredients.map((ingredient, i) => (
 								<Text key={i} style={styles.singleIngredient}>
 									- {ingredient}
 								</Text>
@@ -62,7 +41,7 @@ const RecipeScreen = ({ navigation }) => {
 						{/* Directions: */}
 						<View style={styles.recipesContentSection}>
 							<Text style={[ styles.recipesHeadings, styles.recipeSubHeading ]}>Directions</Text>
-							{recipeInfo.directions.map((direction, i) => (
+							{recipe.directions.map((direction, i) => (
 								<View key={i} style={styles.singleDirectionView}>
 									<Text style={styles.singleDirection}>- </Text>
 									<Text style={styles.singleDirection}>{direction}</Text>
@@ -99,7 +78,7 @@ const styles = StyleSheet.create({
 		fontFamily: 'CoveredByYourGrace_400Regular',
 		letterSpacing: 3,
 		fontSize: 25,
-		marginBottom: 20
+		marginBottom: 18
 	},
 	recipesHeadings: {
 		color: '#fff',
@@ -117,9 +96,19 @@ const styles = StyleSheet.create({
 	},
 	singleDirection: {
 		fontSize: 15
+	},
+	timeView: {
+		flexDirection: 'row',
+		marginBottom: 22
+	},
+	time: {
+		color: '#fff',
+		marginLeft: 5
 	}
 });
 
-const mapState = (state) => ({});
+const mapState = (state) => ({
+	recipes: state
+});
 
 export default connect(mapState)(RecipeScreen);

@@ -17,7 +17,13 @@ const AllRecipesScreen = ({ navigation, getRecipes, recipes }) => {
 				data={recipes}
 				keyExtractor={(recipe) => recipe.id.toString()}
 				renderItem={({ item }) => (
-					<RecipeListItem name={item.name} image={item.image} time={item.time} nav={navigation} />
+					<RecipeListItem
+						name={item.name}
+						image={item.image}
+						time={item.time}
+						id={item.id}
+						nav={navigation}
+					/>
 				)}
 			/>
 			<NavBar nav={navigation} />

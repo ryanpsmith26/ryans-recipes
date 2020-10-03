@@ -3,9 +3,9 @@ import { StyleSheet, Image, View, Text } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
-const RecipeListItem = ({ name, image, time, nav }) => {
+const RecipeListItem = ({ id, name, image, time, nav }) => {
 	return (
-		<TouchableOpacity style={styles.listItemView} onPress={() => nav.navigate('Recipe')}>
+		<TouchableOpacity style={styles.listItemView} onPress={() => nav.navigate('Recipe', { id })}>
 			<Image source={image} style={styles.listItemImg} />
 			<View>
 				<Text style={styles.listItemName}>{name}</Text>
