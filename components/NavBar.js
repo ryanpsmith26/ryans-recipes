@@ -1,12 +1,13 @@
 import React from 'react';
-import { StyleSheet, View, Button } from 'react-native';
+import { StyleSheet, View } from 'react-native';
+import { Entypo } from '@expo/vector-icons';
 
 const NavBar = ({ nav }) => {
 	return (
 		<View style={styles.navBarView}>
-			<Button title="Home" color="white" onPress={() => nav.navigate('Welcome')} style={styles.NavBtn} />
-			<Button title="Explore" color="white" onPress={() => nav.navigate('AllRecipes')} style={styles.NavBtn} />
-			<Button title="Recipe" color="white" onPress={() => nav.navigate('Recipe')} style={styles.NavBtn} />
+			<Entypo name="home" size={30} color="#fff" onPress={() => nav.navigate('Welcome')} />
+			<Entypo name="bowl" size={30} color="#fff" onPress={() => nav.navigate('AllRecipes')} />
+			<Entypo name="heart" size={30} color="#fff" onPress={() => nav.navigate('Recipe')} />
 		</View>
 	);
 };
@@ -20,9 +21,6 @@ const styles = StyleSheet.create({
 		justifyContent: 'space-around',
 		alignItems: 'center',
 		paddingTop: 10
-	},
-	NavBtn: {
-		fontSize: 30
 	}
 });
 
