@@ -1,12 +1,14 @@
 import React from 'react';
 import { StyleSheet, SafeAreaView, Text } from 'react-native';
+import { TextInput } from 'react-native-gesture-handler';
 
 import NavBar from '../components/NavBar';
 
 const NewRecipeForm = ({ navigation }) => {
 	return (
 		<SafeAreaView style={styles.recipeFormView}>
-			<Text>ENTER FORM HERE</Text>
+			<Text>Recipe Name</Text>
+			<TextInput />
 			<NavBar nav={navigation} />
 		</SafeAreaView>
 	);

@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, SafeAreaView, Text, Image, Dimensions } from 'react-native';
+import { StyleSheet, SafeAreaView, View, Text, Image, Dimensions } from 'react-native';
 import { AppLoading } from 'expo';
 import { CoveredByYourGrace_400Regular, useFonts } from '@expo-google-fonts/covered-by-your-grace';
 
@@ -14,7 +14,10 @@ const WelcomeScreen = ({ navigation }) => {
 	else {
 		return (
 			<SafeAreaView style={styles.welcomeView}>
-				<Text style={styles.welcomeHeading}>Ryan's Recipes!</Text>
+				<View style={styles.welcomeHeadingView}>
+					<Text style={styles.welcomeHeadingText}>Ryan's Recipes!</Text>
+				</View>
+
 				<Image source={require('../assets/img/frost-kitchen-1.jpeg')} style={styles.welcomeImg} />
 				<NavBar style={styles.navbar} nav={navigation} />
 			</SafeAreaView>
@@ -22,7 +25,9 @@ const WelcomeScreen = ({ navigation }) => {
 	}
 };
 
-const welcomeImgHeight = Dimensions.get('screen').height / 1.48;
+const welcomeHeaderHeight = Dimensions.get('screen').height / 10;
+const welcomeImgHeight = Dimensions.get('screen').height / 1.335;
+// would need to set navbar height by dimensions for super consistent results on WelcomeScreen
 
 const styles = StyleSheet.create({
 	welcomeView: {
@@ -30,16 +35,19 @@ const styles = StyleSheet.create({
 		backgroundColor: 'dodgerblue',
 		justifyContent: 'space-between'
 	},
-	welcomeHeading: {
-		textAlign: 'center',
+	welcomeHeadingView: {
+		height: welcomeHeaderHeight,
+		// borderWidth: 2,
+		justifyContent: 'center'
+	},
+	welcomeHeadingText: {
+		fontFamily: 'CoveredByYourGrace_400Regular',
+		letterSpacing: 7,
 		color: '#fff',
 		fontSize: 30,
-		margin: 30,
-		fontFamily: 'CoveredByYourGrace_400Regular',
-		letterSpacing: 7
+		textAlign: 'center'
 	},
 	welcomeImg: {
-		// need to make height dynamic
 		height: welcomeImgHeight,
 		width: '100%',
 		resizeMode: 'cover',

@@ -21,6 +21,7 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": "App for exploring and sharing recipes with your friends and the world!"
   }
 }
