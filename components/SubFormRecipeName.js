@@ -57,13 +57,13 @@ const styles = StyleSheet.create({
 	renderedRecipeName: {
 		fontFamily: 'CoveredByYourGrace_400Regular',
 		letterSpacing: 3,
-		fontSize: 25,
-		marginLeft: 20
+		fontSize: 25
 	},
 	renderedInputText: {
 		fontSize: 20,
 		color: '#fff',
-		marginBottom: 8
+		marginBottom: 8,
+		marginLeft: 20
 	}
 });
 

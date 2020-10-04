@@ -46,11 +46,11 @@ const styles = StyleSheet.create({
 	renderedInputText: {
 		fontSize: 20,
 		color: '#fff',
-		marginBottom: 8
+		marginBottom: 8,
+		marginLeft: 20
 	},
 	time: {
-		color: '#fff',
-		marginLeft: 20
+		color: '#fff'
 	}
 });
 

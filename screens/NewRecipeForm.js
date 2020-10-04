@@ -43,7 +43,8 @@ const styles = StyleSheet.create({
 	},
 	recipeForm: {
 		margin: 15,
-		alignItems: 'center'
+		alignItems: 'center',
+		minHeight: 1000
 	},
 	header: {
 		color: '#fff',
