@@ -8,12 +8,15 @@ import SubFormRecipeName from '../components/SubFormRecipeName';
 import SubFormIngredients from '../components/SubFormIngredients';
 import SubFormDirections from '../components/SubFormDirections';
 import SubFormTime from '../components/SubFormTime';
+import { addRecipe } from '../redux/store';
 
-const NewRecipeForm = ({ navigation, recipes }) => {
+const NewRecipeForm = ({ navigation, recipes, addRecipe }) => {
 	const [ recipeName, setRecipeName ] = useState('');
 	const [ time, setTime ] = useState(0);
 	const [ ingredients, setIngredients ] = useState([]);
 	const [ directions, setDirections ] = useState([]);
+
+	console.log(recipes);
 
 	return (
 		<SafeAreaView style={styles.recipeFormView}>
@@ -27,7 +30,18 @@ const NewRecipeForm = ({ navigation, recipes }) => {
 					<SubFormDirections directions={directions} setDirections={setDirections} />
 				</View>
 			</ScrollView>
-			<TouchableOpacity style={styles.submitBtn}>
+			<TouchableOpacity
+				style={styles.submitBtn}
+				onPress={() =>
+					addRecipe({
+						id: recipes.length + 1,
+						name: recipeName,
+						time,
+						ingredients,
+						directions,
+						image: require('../assets/img/default.jpg')
+					})}
+			>
 				<Text style={styles.submitBtnText}>Submit</Text>
 			</TouchableOpacity>
 			<NavBar nav={navigation} />
@@ -72,4 +86,8 @@ const mapState = (state) => ({
 	recipes: state
 });
 
-export default connect(mapState)(NewRecipeForm);
+const mapDispatch = (dispatch) => ({
+	addRecipe: (recipe) => dispatch(addRecipe(recipe))
+});
+
+export default connect(mapState, mapDispatch)(NewRecipeForm);
