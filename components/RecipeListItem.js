@@ -23,7 +23,8 @@ const styles = StyleSheet.create({
 		flex: 1,
 		flexDirection: 'row',
 		alignItems: 'center',
-		borderBottomWidth: 0.25
+		borderBottomWidth: 0.25,
+		borderColor: '#fff'
 	},
 	listItemImg: {
 		width: 70,
@@ -34,7 +35,8 @@ const styles = StyleSheet.create({
 	listItemName: {
 		fontSize: 15,
 		fontWeight: 'bold',
-		marginBottom: 8
+		marginBottom: 8,
+		color: '#1c1c1c'
 	},
 	listItemTime: {
 		color: '#fff',
