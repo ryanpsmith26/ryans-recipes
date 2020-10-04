@@ -35,6 +35,9 @@ const SubFormIngredients = ({ ingredients, setIngredients }) => {
 };
 
 const styles = StyleSheet.create({
+	subFormView: {
+		marginBottom: 20
+	},
 	formInputView: {
 		flexDirection: 'row',
 		alignItems: 'center'

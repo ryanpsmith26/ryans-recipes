@@ -11,7 +11,7 @@ const SubFormDirections = ({ directions, setDirections }) => {
 			onSubmit={(values) => setDirections([ ...directions, values.direction ])}
 		>
 			{({ handleChange, handleSubmit }) => (
-				<View style={styles.subFormView}>
+				<View>
 					<View style={styles.formInputView}>
 						<TextInput
 							style={[ styles.formInput, styles.directionsInput ]}

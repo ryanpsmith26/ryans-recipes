@@ -16,7 +16,7 @@ const SubFormRecipeName = ({ recipeName, setRecipeName }) => {
 		return (
 			<Formik initialValues={{ name: '' }} onSubmit={(values) => setRecipeName(values.name)}>
 				{({ handleChange, handleSubmit }) => (
-					<View style={styles.subFormView}>
+					<View>
 						<View style={styles.formInputView}>
 							<TextInput
 								style={styles.formInput}
