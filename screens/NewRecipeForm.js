@@ -17,12 +17,16 @@ const NewRecipeForm = ({ navigation, recipes }) => {
 		<SafeAreaView style={styles.recipeFormView}>
 			<ScrollView>
 				<Text style={styles.header}>Enter your Recipe Details here!</Text>
+
 				<View style={styles.recipeForm}>
 					<SubFormRecipeName recipeName={recipeName} setRecipeName={setRecipeName} />
 					<SubFormIngredients ingredients={ingredients} setIngredients={setIngredients} />
 					<SubFormDirections directions={directions} setDirections={setDirections} />
 				</View>
 			</ScrollView>
+			<TouchableOpacity style={styles.submitBtn}>
+				<Text style={styles.submitBtnText}>Submit</Text>
+			</TouchableOpacity>
 			<NavBar nav={navigation} />
 		</SafeAreaView>
 	);
@@ -41,9 +45,22 @@ const styles = StyleSheet.create({
 	header: {
 		color: '#fff',
 		textAlign: 'center',
-		letterSpacing: 3,
+		letterSpacing: 2,
 		fontSize: 20,
-		marginTop: 25
+		marginTop: 25,
+		fontWeight: 'bold'
+	},
+	submitBtn: {
+		backgroundColor: '#2650c9',
+		borderRadius: 25,
+		margin: 20,
+		padding: 12
+	},
+	submitBtnText: {
+		textAlign: 'center',
+		color: '#fff',
+		fontSize: 20,
+		fontWeight: 'bold'
 	}
 });
 
