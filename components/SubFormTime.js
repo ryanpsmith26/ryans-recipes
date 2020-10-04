@@ -15,6 +15,7 @@ const SubFormTime = ({ time, setTime }) => {
 							placeholder="Enter Cook Time (minutes)"
 							onChangeText={handleChange('time')}
 							clearTextOnFocus={true}
+							keyboardType="number-pad"
 						/>
 						<TouchableOpacity onPress={handleSubmit}>
 							<AntDesign name="pluscircleo" size={30} color="black" />

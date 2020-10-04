@@ -16,7 +16,17 @@ const NewRecipeForm = ({ navigation, recipes, addRecipe }) => {
 	const [ ingredients, setIngredients ] = useState([]);
 	const [ directions, setDirections ] = useState([]);
 
-	console.log(recipes);
+	const handleSubmit = () => {
+		addRecipe({
+			id: recipes.length + 1,
+			name: recipeName,
+			time: `${time} minutes`,
+			ingredients,
+			directions,
+			image: require('../assets/img/default.jpg')
+		});
+		navigation.navigate('Recipe', { id: recipes.length + 1 });
+	};
 
 	return (
 		<SafeAreaView style={styles.recipeFormView}>
@@ -30,18 +40,7 @@ const NewRecipeForm = ({ navigation, recipes, addRecipe }) => {
 					<SubFormDirections directions={directions} setDirections={setDirections} />
 				</View>
 			</ScrollView>
-			<TouchableOpacity
-				style={styles.submitBtn}
-				onPress={() =>
-					addRecipe({
-						id: recipes.length + 1,
-						name: recipeName,
-						time,
-						ingredients,
-						directions,
-						image: require('../assets/img/default.jpg')
-					})}
-			>
+			<TouchableOpacity style={styles.submitBtn} onPress={handleSubmit}>
 				<Text style={styles.submitBtnText}>Submit</Text>
 			</TouchableOpacity>
 			<NavBar nav={navigation} />
