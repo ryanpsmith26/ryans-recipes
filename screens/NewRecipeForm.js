@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { StyleSheet, SafeAreaView, ScrollView, View, Text } from 'react-native';
 import { TextInput, TouchableOpacity } from 'react-native-gesture-handler';
+import { connect } from 'react-redux';
 import { Formik } from 'formik';
 import { AntDesign } from '@expo/vector-icons';
 import { CoveredByYourGrace_400Regular, useFonts } from '@expo-google-fonts/covered-by-your-grace';
@@ -8,7 +9,7 @@ import { AppLoading } from 'expo';
 
 import NavBar from '../components/NavBar';
 
-const NewRecipeForm = ({ navigation }) => {
+const NewRecipeForm = ({ navigation, recipes }) => {
 	let [ fontsLoaded ] = useFonts({
 		CoveredByYourGrace_400Regular
 	});
@@ -145,4 +146,8 @@ const styles = StyleSheet.create({
 	}
 });
 
-export default NewRecipeForm;
+const mapState = (state) => ({
+	recipes: state
+});
+
+export default connect(mapState)(NewRecipeForm);
