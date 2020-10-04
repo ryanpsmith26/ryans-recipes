@@ -4,30 +4,24 @@ import { TextInput, TouchableOpacity } from 'react-native-gesture-handler';
 import { Formik } from 'formik';
 import { AntDesign } from '@expo/vector-icons';
 
-const SubFormIngredients = ({ ingredients, setIngredients }) => {
+const SubFormTime = ({ time, setTime }) => {
 	return (
-		<Formik
-			initialValues={{ ingredient: '' }}
-			onSubmit={(values) => setIngredients([ ...ingredients, values.ingredient ])}
-		>
+		<Formik initialValues={{ time: 0 }} onSubmit={(values) => setTime(values.time)}>
 			{({ handleChange, handleSubmit }) => (
 				<View>
 					<View style={styles.formInputView}>
 						<TextInput
 							style={styles.formInput}
-							placeholder="Enter Ingredient"
-							onChangeText={handleChange('ingredient')}
+							placeholder="Enter Cook Time (minutes)"
+							onChangeText={handleChange('time')}
 							clearTextOnFocus={true}
 						/>
 						<TouchableOpacity onPress={handleSubmit}>
 							<AntDesign name="pluscircleo" size={30} color="black" />
 						</TouchableOpacity>
 					</View>
-					{ingredients.map((ingredient, i) => (
-						<Text key={i} style={styles.renderedInputText}>
-							- {ingredient}
-						</Text>
-					))}
+
+					{time > 0 && <Text style={[ styles.renderedInputText, styles.time ]}>{time} minutes</Text>}
 				</View>
 			)}
 		</Formik>
@@ -53,7 +47,11 @@ const styles = StyleSheet.create({
 		fontSize: 20,
 		color: '#fff',
 		marginBottom: 8
+	},
+	time: {
+		color: '#fff',
+		marginLeft: 20
 	}
 });
 
-export default SubFormIngredients;
+export default SubFormTime;

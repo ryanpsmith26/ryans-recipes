@@ -28,7 +28,10 @@ const SubFormRecipeName = ({ recipeName, setRecipeName }) => {
 								<AntDesign name="pluscircleo" size={30} color="black" />
 							</TouchableOpacity>
 						</View>
-						<Text style={[ styles.renderedInputText, styles.renderedRecipeName ]}>{recipeName}</Text>
+
+						{recipeName.length > 0 && (
+							<Text style={[ styles.renderedInputText, styles.renderedRecipeName ]}>{recipeName}</Text>
+						)}
 					</View>
 				)}
 			</Formik>
@@ -55,7 +58,7 @@ const styles = StyleSheet.create({
 		fontFamily: 'CoveredByYourGrace_400Regular',
 		letterSpacing: 3,
 		fontSize: 25,
-		textAlign: 'center'
+		marginLeft: 20
 	},
 	renderedInputText: {
 		fontSize: 20,

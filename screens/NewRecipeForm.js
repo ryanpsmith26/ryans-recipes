@@ -7,9 +7,11 @@ import NavBar from '../components/NavBar';
 import SubFormRecipeName from '../components/SubFormRecipeName';
 import SubFormIngredients from '../components/SubFormIngredients';
 import SubFormDirections from '../components/SubFormDirections';
+import SubFormTime from '../components/SubFormTime';
 
 const NewRecipeForm = ({ navigation, recipes }) => {
 	const [ recipeName, setRecipeName ] = useState('');
+	const [ time, setTime ] = useState(0);
 	const [ ingredients, setIngredients ] = useState([]);
 	const [ directions, setDirections ] = useState([]);
 
@@ -20,6 +22,7 @@ const NewRecipeForm = ({ navigation, recipes }) => {
 
 				<View style={styles.recipeForm}>
 					<SubFormRecipeName recipeName={recipeName} setRecipeName={setRecipeName} />
+					<SubFormTime time={time} setTime={setTime} />
 					<SubFormIngredients ingredients={ingredients} setIngredients={setIngredients} />
 					<SubFormDirections directions={directions} setDirections={setDirections} />
 				</View>
