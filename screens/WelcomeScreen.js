@@ -37,7 +37,6 @@ const styles = StyleSheet.create({
 	},
 	welcomeHeadingView: {
 		height: welcomeHeaderHeight,
-		// borderWidth: 2,
 		justifyContent: 'center'
 	},
 	welcomeHeadingText: {

@@ -4,6 +4,7 @@ import { createLogger } from 'redux-logger';
 // ACTION TYPES
 const GET_RECIPES = 'GET_RECIPES';
 const ADD_RECIPE = 'ADD_RECIPE';
+const DELETE_RECIPE = 'DELETE_RECIPE';
 
 // ACTION CREATORS
 export const getRecipes = () => ({
@@ -13,6 +14,11 @@ export const getRecipes = () => ({
 export const addRecipe = (recipe) => ({
 	type: ADD_RECIPE,
 	recipe
+});
+
+export const deleteRecipe = (id) => ({
+	type: DELETE_RECIPE,
+	id
 });
 
 // INITIAL STATE
@@ -27,6 +33,9 @@ const reducer = (state = initialState, action) => {
 			return [ ...state, action.recipe ];
 		default:
 			return state;
+		case DELETE_RECIPE:
+			console.log('in reducer-->', action.id);
+			return state.filter((recipe) => recipe.id !== action.id);
 	}
 };
 
