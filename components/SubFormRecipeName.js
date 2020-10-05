@@ -23,6 +23,7 @@ const SubFormRecipeName = ({ recipeName, setRecipeName }) => {
 								placeholder="Enter Recipe Name"
 								onChangeText={handleChange('name')}
 								clearTextOnFocus={true}
+								onSubmitEditing={handleSubmit}
 							/>
 							<TouchableOpacity onPress={handleSubmit}>
 								<AntDesign name="pluscircleo" size={30} color="black" />

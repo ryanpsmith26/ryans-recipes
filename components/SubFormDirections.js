@@ -20,6 +20,7 @@ const SubFormDirections = ({ directions, setDirections }) => {
 							numberOfLines={3}
 							onChangeText={handleChange('direction')}
 							clearTextOnFocus={true}
+							onSubmitEditing={handleSubmit}
 						/>
 						<TouchableOpacity onPress={handleSubmit}>
 							<AntDesign name="pluscircleo" size={30} color="black" />
