@@ -8,6 +8,8 @@ import SwipeDeleteBtn from '../components/SwipeDeleteBtn';
 import NavBar from '../components/NavBar';
 import { getRecipes } from '../redux/recipes';
 
+import colors from '../config/colors';
+
 const AllRecipesScreen = ({ navigation, getRecipes, recipes }) => {
 	useEffect(() => {
 		getRecipes();
@@ -21,7 +23,7 @@ const AllRecipesScreen = ({ navigation, getRecipes, recipes }) => {
 				renderItem={({ item }) => (
 					<Swipeable
 						renderRightActions={() => <SwipeDeleteBtn id={item.id} />}
-						onSwipeableRightOpen={() => console.log('hello')}
+						onSwipeableRightOpen={() => console.log('delete opened')}
 					>
 						<RecipeListItem
 							name={item.name}
@@ -41,11 +43,8 @@ const AllRecipesScreen = ({ navigation, getRecipes, recipes }) => {
 const styles = StyleSheet.create({
 	allRecipesView: {
 		flex: 1,
-		backgroundColor: 'dodgerblue',
+		backgroundColor: colors.medium,
 		justifyContent: 'space-between'
-	},
-	deleteBtn: {
-		backgroundColor: 'red'
 	}
 });
 

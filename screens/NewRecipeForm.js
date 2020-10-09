@@ -10,6 +10,8 @@ import SubFormDirections from '../components/SubFormDirections';
 import SubFormTime from '../components/SubFormTime';
 import { addRecipe } from '../redux/recipes';
 
+import colors from '../config/colors';
+
 const NewRecipeForm = ({ navigation, recipes, addRecipe }) => {
 	const [ recipeName, setRecipeName ] = useState('');
 	const [ time, setTime ] = useState(0);
@@ -51,7 +53,7 @@ const NewRecipeForm = ({ navigation, recipes, addRecipe }) => {
 const styles = StyleSheet.create({
 	recipeFormView: {
 		flex: 1,
-		backgroundColor: 'dodgerblue',
+		backgroundColor: colors.medium,
 		justifyContent: 'space-between'
 	},
 	recipeForm: {
@@ -60,7 +62,7 @@ const styles = StyleSheet.create({
 		minHeight: 1000
 	},
 	header: {
-		color: '#fff',
+		color: colors.white,
 		textAlign: 'center',
 		letterSpacing: 2,
 		fontSize: 20,
@@ -68,14 +70,14 @@ const styles = StyleSheet.create({
 		fontWeight: 'bold'
 	},
 	submitBtn: {
-		backgroundColor: '#2650c9',
+		backgroundColor: colors.dark,
 		borderRadius: 25,
 		margin: 20,
 		padding: 12
 	},
 	submitBtnText: {
 		textAlign: 'center',
-		color: '#fff',
+		color: colors.white,
 		fontSize: 20,
 		fontWeight: 'bold'
 	}

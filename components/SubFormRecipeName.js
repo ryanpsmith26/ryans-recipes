@@ -6,6 +6,8 @@ import { CoveredByYourGrace_400Regular, useFonts } from '@expo-google-fonts/cove
 import { AntDesign } from '@expo/vector-icons';
 import { AppLoading } from 'expo';
 
+import colors from '../config/colors';
+
 const SubFormRecipeName = ({ recipeName, setRecipeName }) => {
 	let [ fontsLoaded ] = useFonts({
 		CoveredByYourGrace_400Regular
@@ -46,7 +48,7 @@ const styles = StyleSheet.create({
 		alignItems: 'center'
 	},
 	formInput: {
-		backgroundColor: '#66b3ff',
+		backgroundColor: colors.light,
 		borderRadius: 25,
 		height: 50,
 		width: '88%',
@@ -62,7 +64,7 @@ const styles = StyleSheet.create({
 	},
 	renderedInputText: {
 		fontSize: 20,
-		color: '#fff',
+		color: colors.white,
 		marginBottom: 8,
 		marginLeft: 20
 	}

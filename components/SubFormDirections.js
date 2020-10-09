@@ -4,6 +4,8 @@ import { TextInput, TouchableOpacity } from 'react-native-gesture-handler';
 import { Formik } from 'formik';
 import { AntDesign } from '@expo/vector-icons';
 
+import colors from '../config/colors';
+
 const SubFormDirections = ({ directions, setDirections }) => {
 	return (
 		<Formik
@@ -43,7 +45,7 @@ const styles = StyleSheet.create({
 		alignItems: 'center'
 	},
 	formInput: {
-		backgroundColor: '#66b3ff',
+		backgroundColor: colors.light,
 		borderRadius: 25,
 		height: 50,
 		width: '88%',
@@ -59,7 +61,7 @@ const styles = StyleSheet.create({
 	},
 	renderedInputText: {
 		fontSize: 20,
-		color: '#fff',
+		color: colors.white,
 		marginBottom: 8,
 		marginLeft: 20
 	}

@@ -7,6 +7,8 @@ import { MaterialIcons } from '@expo/vector-icons';
 
 import NavBar from '../components/NavBar';
 
+import colors from '../config/colors';
+
 const RecipeScreen = ({ navigation, route, recipes }) => {
 	let [ fontsLoaded ] = useFonts({
 		CoveredByYourGrace_400Regular
@@ -59,7 +61,7 @@ const RecipeScreen = ({ navigation, route, recipes }) => {
 const styles = StyleSheet.create({
 	recipeView: {
 		flex: 1,
-		backgroundColor: 'dodgerblue',
+		backgroundColor: colors.medium,
 		justifyContent: 'space-between'
 	},
 	img: {
@@ -81,7 +83,7 @@ const styles = StyleSheet.create({
 		marginBottom: 18
 	},
 	recipesHeadings: {
-		color: '#fff',
+		color: colors.white,
 		fontWeight: 'bold',
 		fontSize: 20,
 		letterSpacing: 2
@@ -102,7 +104,7 @@ const styles = StyleSheet.create({
 		marginBottom: 22
 	},
 	time: {
-		color: '#fff',
+		color: colors.white,
 		marginLeft: 5
 	}
 });

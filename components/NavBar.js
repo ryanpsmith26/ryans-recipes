@@ -3,6 +3,8 @@ import { StyleSheet, View } from 'react-native';
 import { Entypo } from '@expo/vector-icons';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
+import colors from '../config/colors';
+
 const NavBar = ({ nav }) => {
 	return (
 		<View style={styles.navBarView}>
@@ -22,7 +24,7 @@ const NavBar = ({ nav }) => {
 const styles = StyleSheet.create({
 	navBarView: {
 		borderTopWidth: 0.25,
-		borderTopColor: '#fff',
+		borderTopColor: colors.white,
 		flex: -1,
 		flexDirection: 'row',
 		justifyContent: 'space-around',

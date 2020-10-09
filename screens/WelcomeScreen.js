@@ -5,6 +5,8 @@ import { CoveredByYourGrace_400Regular, useFonts } from '@expo-google-fonts/cove
 
 import NavBar from '../components/NavBar';
 
+import colors from '../config/colors';
+
 const WelcomeScreen = ({ navigation }) => {
 	let [ fontsLoaded ] = useFonts({
 		CoveredByYourGrace_400Regular
@@ -31,7 +33,7 @@ const welcomeImgHeight = Dimensions.get('screen').height / 1.335;
 const styles = StyleSheet.create({
 	welcomeView: {
 		flex: 1,
-		backgroundColor: 'dodgerblue',
+		backgroundColor: colors.medium,
 		justifyContent: 'space-between'
 	},
 	welcomeHeadingView: {
@@ -41,7 +43,7 @@ const styles = StyleSheet.create({
 	welcomeHeadingText: {
 		fontFamily: 'CoveredByYourGrace_400Regular',
 		letterSpacing: 7,
-		color: '#fff',
+		color: colors.white,
 		fontSize: 30,
 		textAlign: 'center'
 	},

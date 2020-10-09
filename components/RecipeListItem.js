@@ -3,6 +3,8 @@ import { StyleSheet, Image, View, Text } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
+import colors from '../config/colors';
+
 const RecipeListItem = ({ id, name, image, time, nav }) => {
 	return (
 		<TouchableOpacity style={styles.listItemView} onPress={() => nav.navigate('Recipe', { id })}>
@@ -24,7 +26,7 @@ const styles = StyleSheet.create({
 		flexDirection: 'row',
 		alignItems: 'center',
 		borderBottomWidth: 0.25,
-		borderColor: '#fff'
+		borderColor: colors.white
 	},
 	listItemImg: {
 		width: 70,
@@ -36,7 +38,7 @@ const styles = StyleSheet.create({
 		fontSize: 15,
 		fontWeight: 'bold',
 		marginBottom: 8,
-		color: '#1c1c1c'
+		color: colors.darkGray
 	},
 	listItemTime: {
 		color: '#fff',

@@ -5,6 +5,8 @@ import { connect } from 'react-redux';
 
 import { deleteRecipe } from '../redux/recipes';
 
+import colors from '../config/colors';
+
 const SwipeDeleteBtn = ({ id, deleteRecipe }) => {
 	return (
 		<TouchableOpacity style={styles.container} onPress={() => deleteRecipe(id)}>
@@ -18,10 +20,10 @@ const styles = StyleSheet.create({
 		flex: 1,
 		justifyContent: 'center',
 		alignItems: 'center',
-		backgroundColor: '#ff4f42'
+		backgroundColor: colors.red
 	},
 	text: {
-		color: '#fff',
+		color: colors.white,
 		fontWeight: 'bold',
 		fontSize: 15,
 		padding: 30
