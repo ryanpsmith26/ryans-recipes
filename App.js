@@ -10,6 +10,8 @@ import AllRecipesScreen from './screens/AllRecipesScreen';
 import NewRecipeForm from './screens/NewRecipeForm';
 import RecipeScreen from './screens/RecipeScreen';
 
+import colors from './config/colors';
+
 const Stack = createStackNavigator();
 
 const StackNavigator = () => (
@@ -41,7 +43,8 @@ export default function App() {
 	);
 }
 
+// refactor to place headerStyle on Stack.Navigator for ALL stacks
 const headerStyle = {
-	headerStyle: { backgroundColor: 'dodgerblue' },
-	headerTintColor: '#000'
+	headerStyle: { backgroundColor: colors.medium },
+	headerTintColor: colors.black
 };

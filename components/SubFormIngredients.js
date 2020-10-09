@@ -23,7 +23,7 @@ const SubFormIngredients = ({ ingredients, setIngredients }) => {
 							onSubmitEditing={handleSubmit}
 						/>
 						<TouchableOpacity onPress={handleSubmit}>
-							<AntDesign name="pluscircleo" size={30} color="black" />
+							<AntDesign name="pluscircleo" size={30} color={colors.black} />
 						</TouchableOpacity>
 					</View>
 					{ingredients.map((ingredient, i) => (

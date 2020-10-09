@@ -9,13 +9,13 @@ const NavBar = ({ nav }) => {
 	return (
 		<View style={styles.navBarView}>
 			<TouchableOpacity activeOpacity={0.3} onPress={() => nav.navigate('Welcome')}>
-				<Entypo name="home" size={30} color="#fff" />
+				<Entypo name="home" size={30} color={colors.white} />
 			</TouchableOpacity>
 			<TouchableOpacity onPress={() => nav.navigate('Explore')}>
-				<Entypo name="bowl" size={30} color="#fff" />
+				<Entypo name="bowl" size={30} color={colors.white} />
 			</TouchableOpacity>
 			<TouchableOpacity onPress={() => nav.navigate('New Recipe')}>
-				<Entypo name="plus" size={40} color="#fff" />
+				<Entypo name="plus" size={40} color={colors.white} />
 			</TouchableOpacity>
 		</View>
 	);

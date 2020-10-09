@@ -12,7 +12,7 @@ const RecipeListItem = ({ id, name, image, time, nav }) => {
 			<View>
 				<Text style={styles.listItemName}>{name}</Text>
 				<View style={styles.timeView}>
-					<MaterialIcons name="timer" size={18} color="#fff" />
+					<MaterialIcons name="timer" size={18} color={colors.white} />
 					<Text style={styles.listItemTime}>{time}</Text>
 				</View>
 			</View>

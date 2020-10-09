@@ -28,7 +28,7 @@ const RecipeScreen = ({ navigation, route, recipes }) => {
 						<Text style={[ styles.recipesHeadings, styles.recipeTitle ]}>{recipe.name}</Text>
 						{/* Cook Time */}
 						<View style={styles.timeView}>
-							<MaterialIcons name="timer" size={18} color="#fff" />
+							<MaterialIcons name="timer" size={18} color={colors.white} />
 							<Text style={styles.time}>{recipe.time}</Text>
 						</View>
 						{/* Ingredients: */}
