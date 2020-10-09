@@ -8,7 +8,7 @@ import SubFormRecipeName from '../components/SubFormRecipeName';
 import SubFormIngredients from '../components/SubFormIngredients';
 import SubFormDirections from '../components/SubFormDirections';
 import SubFormTime from '../components/SubFormTime';
-import { addRecipe } from '../redux/store';
+import { addRecipe } from '../redux/recipes';
 
 const NewRecipeForm = ({ navigation, recipes, addRecipe }) => {
 	const [ recipeName, setRecipeName ] = useState('');
@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
 });
 
 const mapState = (state) => ({
-	recipes: state
+	recipes: state.recipes
 });
 
 const mapDispatch = (dispatch) => ({

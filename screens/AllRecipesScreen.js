@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import RecipeListItem from '../components/RecipeListItem';
 import SwipeDeleteBtn from '../components/SwipeDeleteBtn';
 import NavBar from '../components/NavBar';
-import { getRecipes } from '../redux/store';
+import { getRecipes } from '../redux/recipes';
 
 const AllRecipesScreen = ({ navigation, getRecipes, recipes }) => {
 	useEffect(() => {
@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
 });
 
 const mapState = (state) => ({
-	recipes: state
+	recipes: state.recipes
 });
 
 const mapDispatch = (dispatch) => ({

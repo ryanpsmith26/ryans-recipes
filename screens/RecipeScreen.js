@@ -108,7 +108,7 @@ const styles = StyleSheet.create({
 });
 
 const mapState = (state) => ({
-	recipes: state
+	recipes: state.recipes
 });
 
 export default connect(mapState)(RecipeScreen);
