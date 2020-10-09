@@ -10,7 +10,7 @@ import { getRecipes } from '../redux/recipes';
 
 import colors from '../config/colors';
 
-const AllRecipesScreen = ({ navigation, getRecipes, recipes }) => {
+const AllRecipesScreen = ({ navigation, getRecipes, getRecipeTest, recipes }) => {
 	useEffect(() => {
 		getRecipes();
 	});

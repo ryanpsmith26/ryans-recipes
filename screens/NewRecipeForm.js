@@ -25,6 +25,7 @@ const NewRecipeForm = ({ navigation, recipes, addRecipe }) => {
 			time: `${time} minutes`,
 			ingredients,
 			directions,
+			// refactor once add from camera roll is implemented
 			image: require('../assets/img/default.jpg')
 		});
 		navigation.navigate('Recipe', { id: recipes.length + 1 });

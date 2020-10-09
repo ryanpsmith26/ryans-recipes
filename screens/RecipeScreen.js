@@ -9,7 +9,7 @@ import NavBar from '../components/NavBar';
 
 import colors from '../config/colors';
 
-const RecipeScreen = ({ navigation, route, recipes }) => {
+const RecipeScreen = ({ navigation, route, recipes, getRecipeTest }) => {
 	let [ fontsLoaded ] = useFonts({
 		CoveredByYourGrace_400Regular
 	});

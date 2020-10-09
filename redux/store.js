@@ -1,5 +1,5 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
-import { createLogger } from 'redux-logger';
+import thunkMiddleware from 'redux-thunk';
 
 import { recipesReducer } from './recipes';
 
@@ -12,4 +12,4 @@ const appReducer = combineReducers({
 	recipes: recipesReducer
 });
 
-export const store = createStore(appReducer, applyMiddleware(/* createLogger({ collapsed: true }) */));
+export const store = createStore(appReducer, applyMiddleware(thunkMiddleware));
